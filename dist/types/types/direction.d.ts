@@ -1,1 +1,1 @@
-export declare type GCDirection = 'right' | 'left' | 'down' | 'up';
+export type GCDirection = 'right' | 'left' | 'down' | 'up';

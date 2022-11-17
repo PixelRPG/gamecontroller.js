@@ -1,1 +1,1 @@
-export declare type GCType = 'action' | 'after' | 'before';
+export type GCType = 'action' | 'after' | 'before';

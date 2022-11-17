@@ -1,1 +1,1 @@
-export declare type GCCallback = () => any;
+export type GCCallback = () => any;
