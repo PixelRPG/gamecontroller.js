@@ -8,13 +8,13 @@
   "module": "dist/esm/index.js",
   "source": "src/index.ts",
   "scripts": {
-    "build": "npm run build:browser:dev && npm run build:browser && npm run build:esm && npm run build:cjs && npm run build:types",
+    "build": "yarn run build:browser:dev && yarn run build:browser && yarn run build:esm && yarn run build:cjs && yarn run build:types",
     "build:browser": "webpack --output-filename gamecontroller.min.js --mode production",
     "build:browser:dev": "webpack --output-filename gamecontroller.js --mode development",
     "build:types": "tsc --declaration true --emitDeclarationOnly --outDir dist/types",
     "build:esm": "tsc --declaration false --module esnext --outDir dist/esm",
     "build:cjs": "tsc --project ./tsconfig.json --declaration false --module commonjs --outDir dist/cjs",
-    "test": "npm run build:cjs && jest --coverage",
+    "test": "yarn run build:cjs && jest --coverage",
     "serve": "http-server . -o /examples/ -d"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
     "@babel/plugin-transform-typescript": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
-    "babel-loader": "^8.3.0",
+    "babel-loader": "^9.1.0",
     "http-server": "^14.1.1",
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^29.3.1",
