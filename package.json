@@ -18,16 +18,16 @@
     "serve": "http-server . -o /examples/ -d"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.21.4",
     "@babel/plugin-transform-typescript": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.21.0",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
     "babel-loader": "^9.1.2",
     "http-server": "^14.1.1",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "typescript": "5.0.2",
-    "webpack": "^5.76.3",
+    "typescript": "5.0.3",
+    "webpack": "^5.77.0",
     "webpack-cli": "^5.0.1"
   },
   "repository": {
