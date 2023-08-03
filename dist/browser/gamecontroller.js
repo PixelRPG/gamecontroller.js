@@ -66,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/action.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/action.ts?");
 
 /***/ }),
 
@@ -76,7 +76,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/axis-actions.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/axis-actions.ts?");
 
 /***/ }),
 
@@ -86,7 +86,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \*************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/button-actions.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/button-actions.ts?");
 
 /***/ }),
 
@@ -96,7 +96,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \*******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/callback.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/callback.ts?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \***************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/connect-callback.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/connect-callback.ts?");
 
 /***/ }),
 
@@ -116,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/direction.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/direction.ts?");
 
 /***/ }),
 
@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/disconnect-callback.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/disconnect-callback.ts?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n;\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/game-control.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n;\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/game-control.ts?");
 
 /***/ }),
 
@@ -146,7 +146,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n;\n\n\n\n//# sourceURL=webpac
   \******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/gamepad.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/gamepad.ts?");
 
 /***/ }),
 
@@ -156,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack:/
   \*******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/gamepads.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/gamepads.ts?");
 
 /***/ }),
 
@@ -176,7 +176,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _act
   \***************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/type.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://gamecontroller.js/./src/types/type.ts?");
 
 /***/ })
 
