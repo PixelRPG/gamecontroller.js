@@ -3,7 +3,7 @@ import { MESSAGES } from './constants';
 import gamepad from './gamepad';
 const gameControl = {
     gamepads: {},
-    axeThreshold: [1.0],
+    axeThreshold: [1.0], // this is an array so it can be expanded without breaking in the future
     isReady: isGamepadSupported(),
     onConnect: function (_gamepad) { },
     onDisconnect: function (_index) { },

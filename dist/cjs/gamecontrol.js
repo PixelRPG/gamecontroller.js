@@ -5,7 +5,7 @@ const constants_1 = require("./constants");
 const gamepad_1 = require("./gamepad");
 const gameControl = {
     gamepads: {},
-    axeThreshold: [1.0],
+    axeThreshold: [1.0], // this is an array so it can be expanded without breaking in the future
     isReady: (0, tools_1.isGamepadSupported)(),
     onConnect: function (_gamepad) { },
     onDisconnect: function (_index) { },
