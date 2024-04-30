@@ -174,14 +174,17 @@ const gamepad = {
     }
 
     // check if vibration actuator exists
-    if (gpad.hapticActuators) {
+    if ((gpad as any).hapticActuators) {
       // newer standard
-      if (typeof (gpad.hapticActuators as any).pulse === 'function') {
-        gamepadPrototype.hapticActuator = gpad.hapticActuators as any as GamepadHapticActuator;
+      if (typeof (gpad as any).hapticActuators?.pulse === 'function') {
+        gamepadPrototype.hapticActuator = (gpad as any).hapticActuators as GamepadHapticActuator;
         gamepadPrototype.vibrationMode = 0;
         gamepadPrototype.vibration = true;
-      } else if (gpad.hapticActuators[0] && typeof (gpad.hapticActuators[0] as any).pulse === 'function') {
-        gamepadPrototype.hapticActuator = gpad.hapticActuators[0];
+      } else if (
+        (gpad as any).hapticActuators[0] &&
+        typeof (gpad as any).hapticActuators[0]?.pulse === 'function'
+      ) {
+        gamepadPrototype.hapticActuator = (gpad as any).hapticActuators[0];
         gamepadPrototype.vibrationMode = 0;
         gamepadPrototype.vibration = true;
       }
