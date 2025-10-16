@@ -1,4 +1,5 @@
 import { MESSAGES } from "./constants";
+import { GAMEPAD_BUTTONS } from "./constants-buttons";
 import { emptyEvents, error } from "./tools";
 import type {
 	GamepadState,
@@ -174,20 +175,23 @@ const gamepad = {
 						error(MESSAGES.INVALID_BUTTON(eventName));
 					}
 				} else if (eventName === "start") {
-					this.buttonActions[9][type] = callback;
+					this.buttonActions[GAMEPAD_BUTTONS.BUTTON_CONTROL_RIGHT][type] =
+						callback;
 				} else if (eventName === "select") {
-					this.buttonActions[8][type] = callback;
+					this.buttonActions[GAMEPAD_BUTTONS.BUTTON_CONTROL_LEFT][type] =
+						callback;
 				} else if (eventName === "r1") {
-					this.buttonActions[5][type] = callback;
+					this.buttonActions[GAMEPAD_BUTTONS.BUMPER_RIGHT][type] = callback;
 				} else if (eventName === "r2") {
-					this.buttonActions[7][type] = callback;
+					this.buttonActions[GAMEPAD_BUTTONS.TRIGGER_RIGHT][type] = callback;
 				} else if (eventName === "l1") {
-					this.buttonActions[4][type] = callback;
+					this.buttonActions[GAMEPAD_BUTTONS.BUMPER_LEFT][type] = callback;
 				} else if (eventName === "l2") {
-					this.buttonActions[6][type] = callback;
+					this.buttonActions[GAMEPAD_BUTTONS.TRIGGER_LEFT][type] = callback;
 				} else if (eventName === "power") {
 					if (this.buttons >= 17) {
-						this.buttonActions[16][type] = callback;
+						this.buttonActions[GAMEPAD_BUTTONS.BUTTON_CONTROL_MIDDLE][type] =
+							callback;
 					} else {
 						error(MESSAGES.INVALID_BUTTON(eventName));
 					}
