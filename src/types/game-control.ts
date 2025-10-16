@@ -1,7 +1,7 @@
 import type { GCCallback } from "./callback";
 import type { GCConnectCallback } from "./connect-callback";
 import type { GCDisconnectCallback } from "./disconnect-callback";
-import type { GCGamepad } from "./gamepad";
+import type { GamepadState } from "./gamepad";
 import type { GCGamepads } from "./gamepads";
 
 export interface GameControl {
@@ -17,7 +17,7 @@ export interface GameControl {
 	/** Triggered after the gamepads are checked for pressed buttons/joysticks movement (after those events have been triggered). */
 	onAfterCycle: GCCallback;
 	getGamepads: () => GCGamepads;
-	getGamepad: (id: number) => GCGamepad | null;
+	getGamepad: (id: number) => GamepadState | null;
 	set: (property: "axeThreshold", value: number[]) => void;
 	checkStatus: () => void;
 	init: () => void;

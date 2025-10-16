@@ -3,10 +3,10 @@ import gamepad from "./gamepad";
 import { error, isGamepadSupported, log } from "./tools";
 import type {
 	GameControl,
+	GamepadState,
 	GCCallback,
 	GCConnectCallback,
 	GCDisconnectCallback,
-	GCGamepad,
 	GCGamepads,
 	WindowWithWebkitRAF,
 } from "./types";
@@ -24,7 +24,7 @@ const gameControl: GameControl = {
 	gamepads: {} as GCGamepads,
 	axeThreshold: [1.0], // this is an array so it can be expanded without breaking in the future
 	isReady: isGamepadSupported(),
-	onConnect: ((_gamepad: GCGamepad) => {}) as GCConnectCallback,
+	onConnect: ((_gamepad: GamepadState) => {}) as GCConnectCallback,
 	onDisconnect: ((_index: number) => {}) as GCDisconnectCallback,
 	onBeforeCycle: (() => {}) as GCCallback,
 	onAfterCycle: (() => {}) as GCCallback,
@@ -68,9 +68,10 @@ const gameControl: GameControl = {
 		}
 	},
 	checkStatus: () => {
-		const requestAnimationFrame =
+		const requestAnimationFrame = (
 			window.requestAnimationFrame ||
-			(window as WindowWithWebkitRAF).webkitRequestAnimationFrame;
+			(window as WindowWithWebkitRAF).webkitRequestAnimationFrame
+		).bind(window);
 		const gamepadIds = Object.keys(gameControl.gamepads);
 
 		gameControl.onBeforeCycle();
@@ -145,7 +146,7 @@ const gameControl: GameControl = {
 	off: function (eventName: string) {
 		switch (eventName) {
 			case "connect":
-				this.onConnect = (_gamepad: GCGamepad) => {};
+				this.onConnect = (_gamepad: GamepadState) => {};
 				break;
 			case "disconnect":
 				this.onDisconnect = (_index: number) => {};

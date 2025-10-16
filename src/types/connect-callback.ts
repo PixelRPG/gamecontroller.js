@@ -1,2 +1,2 @@
-import type { GCGamepad } from "./gamepad";
-export type GCConnectCallback = (gamepad: GCGamepad) => unknown;
+import type { GamepadState } from "./gamepad";
+export type GCConnectCallback = (gamepad: GamepadState) => unknown;

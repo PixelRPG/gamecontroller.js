@@ -17,5 +17,6 @@ if (isGamepadSupported()) {
 	error(MESSAGES.NO_SUPPORT);
 }
 
+export { GAMEPAD_AXES, GAMEPAD_BUTTONS } from "./constants-buttons";
 export { gameControl, isGamepadSupported, MESSAGES };
 export default gameControl;

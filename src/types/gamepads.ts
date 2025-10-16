@@ -1,5 +1,5 @@
-import type { GCGamepad } from "./gamepad";
+import type { GamepadState } from "./gamepad";
 
 export interface GCGamepads {
-	[id: string]: GCGamepad;
+	[id: string]: GamepadState;
 }

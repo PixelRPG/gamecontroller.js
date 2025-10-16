@@ -1,8 +1,8 @@
 import { MESSAGES } from "./constants";
 import { emptyEvents, error } from "./tools";
 import type {
+	GamepadState,
 	GCDirection,
-	GCGamepad,
 	GCType,
 	NavigatorWithWebkitGamepads,
 } from "./types";
@@ -16,7 +16,7 @@ import {
 
 const gamepad = {
 	init: (gpad: Gamepad) => {
-		const gamepadPrototype: GCGamepad = {
+		const gamepadPrototype: GamepadState = {
 			id: gpad.index,
 			buttons: gpad.buttons.length,
 			axes: Math.floor(gpad.axes.length / 2),
