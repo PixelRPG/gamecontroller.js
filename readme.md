@@ -1,32 +1,48 @@
-# gameController.js
+# @ribajs/gameController.js
 
 A JavaScript library that lets you handle, configure, and use gamepad and controllers on a browser.
 
-[![Build Status](https://travis-ci.org/alvaromontoro/gamecontroller.js.svg?branch=master)](https://travis-ci.org/alvaromontoro/gamecontroller.js)
-[![npm](https://img.shields.io/npm/v/gamecontroller.js.svg)](https://www.npmjs.com/package/gamecontroller.js)
-[![npm](https://img.shields.io/npm/l/gamecontroller.js.svg)](https://www.npmjs.com/package/gamecontroller.js)
+**Version 2.0.0** - Enhanced fork with improved TypeScript support, additional constants, and better controller detection.
+
+[![npm](https://img.shields.io/npm/v/@ribajs/gamecontroller.js.svg)](https://www.npmjs.com/package/@ribajs/gamecontroller.js)
+[![npm](https://img.shields.io/npm/l/@ribajs/gamecontroller.js.svg)](https://www.npmjs.com/package/@ribajs/gamecontroller.js)
 
 ## Getting started
 
-GameController.js is a lightweight library (~6KB) that uses JavaScript and the standard [Gamepad API](https://w3c.github.io/gamepad/), and does not have any plugin/library dependencies.
+@ribajs/gameController.js is a lightweight library (~9KB minified) written in TypeScript that uses the standard [Gamepad API](https://w3c.github.io/gamepad/), and does not have any plugin/library dependencies.
+
+### What's New in 2.0
+
+- ✅ Full TypeScript support with type definitions
+- ✅ `GAMEPAD_BUTTONS` and `GAMEPAD_AXES` constants for W3C standard gamepad mapping
+- ✅ `controllerId` property for automatic controller type detection
+- ✅ Enhanced `GamepadState` interface (formerly `GCGamepad`)
+- ✅ Improved event handling and performance
+- ✅ Better browser compatibility
 
 ## Installation
 
 From npm:
 
-```
-npm i gamecontroller.js
+```bash
+npm i @ribajs/gamecontroller.js
 ```
 
 From yarn:
 
-```
-yarn add gamecontroller.js
+```bash
+yarn add @ribajs/gamecontroller.js
 ```
 
-Directly into your webpage (check [latest release on github](https://github.com/alvaromontoro/gamecontroller.js/releases)):
+From pnpm:
 
+```bash
+pnpm add @ribajs/gamecontroller.js
 ```
+
+Directly into your webpage (check [latest release on github](https://github.com/PixelRPG/gamecontroller.js/releases)):
+
+```html
 <script src="./gamecontroller.min.js"></script>
 ```
 
@@ -34,11 +50,39 @@ Directly into your webpage (check [latest release on github](https://github.com/
 
 ## Usage
 
-After importing the library into your webpage/project, `gameControl` will be available to use. This object comes with a series of properties and methods that will allow to handle the different gamepads connected to the computer. 
+### ES6 Modules
 
-The connected gamepads will be stored in a list of `gamepad` objects in `gameControl`. **This `gamepad` object is not the default one returned by the browser** but a higher-level interface to interact with it and simplify its usability.
+```typescript
+import { gameControl, GAMEPAD_BUTTONS, GAMEPAD_AXES } from '@ribajs/gamecontroller.js';
 
-Once the file is imported into the project, the object `gameControl` will be available and ready to be used.
+gameControl.on('connect', (gamepad) => {
+  console.log(`Controller connected: ${gamepad.controllerId}`);
+  
+  // Use constants for better readability
+  gamepad.before(`button${GAMEPAD_BUTTONS.BUTTON_BOTTOM}`, () => {
+    console.log('A/Cross button pressed!');
+  });
+  
+  // Or use aliases
+  gamepad.on('up', moveCharacterUp);
+});
+```
+
+### CommonJS
+
+```javascript
+const { gameControl, GAMEPAD_BUTTONS } = require('@ribajs/gamecontroller.js');
+
+gameControl.on('connect', function(gamepad) {
+  gamepad.on('up', moveCharacterUp);
+});
+```
+
+### Browser Script Tag
+
+After importing the library into your webpage, `gameControl` will be available globally. This object comes with a series of properties and methods that will allow to handle the different gamepads connected to the computer. 
+
+The connected gamepads will be stored in a list of `GamepadState` objects in `gameControl`. **This `GamepadState` object is not the default one returned by the browser** but a higher-level interface to interact with it and simplify its usability.
 
 ```javascript
 gameControl.on('connect', function(gamepad) {
@@ -46,7 +90,38 @@ gameControl.on('connect', function(gamepad) {
 });
 ```
 
-[Visit the Wiki for a full list of the properties, methods and events](https://github.com/alvaromontoro/gamecontroller.js/wiki) of these two objects.
+### Standard Gamepad Button Constants
+
+The library exports `GAMEPAD_BUTTONS` and `GAMEPAD_AXES` constants matching the [W3C Gamepad API specification](https://w3c.github.io/gamepad/):
+
+```typescript
+import { GAMEPAD_BUTTONS, GAMEPAD_AXES } from '@ribajs/gamecontroller.js';
+
+// Button indices (0-16)
+GAMEPAD_BUTTONS.BUTTON_BOTTOM      // 0 - A (Xbox) / Cross (PS)
+GAMEPAD_BUTTONS.BUTTON_RIGHT       // 1 - B (Xbox) / Circle (PS)
+GAMEPAD_BUTTONS.BUTTON_LEFT        // 2 - X (Xbox) / Square (PS)
+GAMEPAD_BUTTONS.BUTTON_TOP         // 3 - Y (Xbox) / Triangle (PS)
+GAMEPAD_BUTTONS.BUMPER_LEFT        // 4 - LB/L1
+GAMEPAD_BUTTONS.BUMPER_RIGHT       // 5 - RB/R1
+GAMEPAD_BUTTONS.TRIGGER_LEFT       // 6 - LT/L2
+GAMEPAD_BUTTONS.TRIGGER_RIGHT      // 7 - RT/R2
+GAMEPAD_BUTTONS.BUTTON_CONTROL_LEFT   // 8 - Select/Back/Share
+GAMEPAD_BUTTONS.BUTTON_CONTROL_RIGHT  // 9 - Start/Menu/Options
+GAMEPAD_BUTTONS.BUTTON_JOYSTICK_LEFT  // 10 - Left stick click
+GAMEPAD_BUTTONS.BUTTON_JOYSTICK_RIGHT // 11 - Right stick click
+GAMEPAD_BUTTONS.D_PAD_UP           // 12
+GAMEPAD_BUTTONS.D_PAD_BOTTOM       // 13
+GAMEPAD_BUTTONS.D_PAD_LEFT         // 14
+GAMEPAD_BUTTONS.D_PAD_RIGHT        // 15
+GAMEPAD_BUTTONS.BUTTON_CONTROL_MIDDLE // 16 - Home/Guide/PS button
+
+// Axis indices (0-3)
+GAMEPAD_AXES.JOYSTICK_LEFT_HORIZONTAL   // 0
+GAMEPAD_AXES.JOYSTICK_LEFT_VERTICAL     // 1
+GAMEPAD_AXES.JOYSTICK_RIGHT_HORIZONTAL  // 2
+GAMEPAD_AXES.JOYSTICK_RIGHT_VERTICAL    // 3
+```
 
 ### Events for gameControl
 
@@ -104,9 +179,7 @@ gamepad.on('button0',     () => { console.log('Button 0 still pressed...'); })
        .after('button0',  () => { console.log('Button 0 was released';      });
 ```
 
-To see the event flow and how the different events are lined-up and interact with each other, visit the [Event Flow wikipage](../EventFlow).
-
-Thisus
+To see the event flow and how the different events are lined-up and interact with each other, check the examples in the `examples/` folder.
 
 These are the _events_ that can be passed as first parameter to the event functions:
 
@@ -265,9 +338,45 @@ These are the _events_ that can be passed as first parameter to the event functi
   </tbody>
 </table>
 
-These names are not arbitrary. They match the buttons and axes described in the [W3C Gamepad API specicification](https://w3c.github.io/gamepad/#fig-visual-representation-of-a-standard-gamepad-layout):
+These names are not arbitrary. They match the buttons and axes described in the [W3C Gamepad API specification](https://w3c.github.io/gamepad/#fig-visual-representation-of-a-standard-gamepad-layout):
 
-![https://github.com/alvaromontoro/gamecontroller.js/blob/master/public/gamepad.svg](https://github.com/alvaromontoro/gamecontroller.js/blob/master/public/gamepad.svg)
+![Standard Gamepad Layout](https://raw.githubusercontent.com/PixelRPG/gamecontroller.js/master/public/gamepad.svg)
+
+## TypeScript Support
+
+The library is written in TypeScript and includes full type definitions:
+
+```typescript
+import { gameControl, GamepadState, GAMEPAD_BUTTONS } from '@ribajs/gamecontroller.js';
+
+gameControl.on('connect', (gamepad: GamepadState) => {
+  // gamepad is fully typed
+  console.log(`Controller: ${gamepad.controllerId}`);
+  console.log(`Buttons: ${gamepad.buttons}`);
+  console.log(`Axes: ${gamepad.axes}`);
+  
+  // Use typed constants
+  gamepad.before(`button${GAMEPAD_BUTTONS.BUTTON_BOTTOM}`, () => {
+    console.log('Primary action button pressed!');
+  });
+});
+```
+
+### GamepadState Interface
+
+The `GamepadState` interface extends the native Gamepad API with additional properties:
+
+```typescript
+interface GamepadState {
+  id: number;                    // Gamepad index (0, 1, 2, 3)
+  controllerId: string;          // Controller ID string (e.g., "Xbox 360 Controller")
+  buttons: number;               // Number of buttons
+  axes: number;                  // Number of axes (joysticks * 2)
+  mapping: GamepadMappingType;   // "standard" or ""
+  vibration: boolean;            // Haptic feedback support
+  // ... and more
+}
+```
 
 
 ## Browser Support
@@ -281,8 +390,20 @@ These names are not arbitrary. They match the buttons and axes described in the 
 
 The `examples` folder contains different examples to showcase how to use the library. To try out the examples locally run `npm run serve` in the root of this repository or try them now directly here:
 
-- [Connectivity](https://htmlpreview.github.io/?https://github.com/alvaromontoro/gamecontroller.js/blob/master/examples/example-0-connectivity.html): shows how to detect if a gamepad was connected/disconnected.
-- [Buttons and Joysticks](https://htmlpreview.github.io/?https://github.com/alvaromontoro/gamecontroller.js/blob/master/examples/example-3-buttons-and-joysticks.html): see how the buttons from your gamepad map to the default gamepad.
-- [SNES Controller](https://htmlpreview.github.io/?https://github.com/alvaromontoro/gamecontroller.js/blob/master/examples/example-4-snes-controller.html): replica of a SNES controller (based on a previous CodePen demo).
-- [Alvanoid](https://htmlpreview.github.io/?https://github.com/alvaromontoro/gamecontroller.js/blob/master/examples/example-5-alvanoid.html): small Arkanoid-based game (based on a previous CodePen demo).
-- [Pong](https://htmlpreview.github.io/?https://github.com/alvaromontoro/gamecontroller.js/blob/master/examples/example-6-multiplayer.html): multiplayer demo with the classic game Pong for 2 players on 2 gamepads.
+- [Connectivity](https://htmlpreview.github.io/?https://github.com/PixelRPG/gamecontroller.js/blob/master/examples/example-0-connectivity.html): shows how to detect if a gamepad was connected/disconnected.
+- [Buttons and Joysticks](https://htmlpreview.github.io/?https://github.com/PixelRPG/gamecontroller.js/blob/master/examples/example-3-buttons-and-joysticks.html): see how the buttons from your gamepad map to the default gamepad.
+- [SNES Controller](https://htmlpreview.github.io/?https://github.com/PixelRPG/gamecontroller.js/blob/master/examples/example-4-snes-controller.html): replica of a SNES controller (based on a previous CodePen demo).
+- [Alvanoid](https://htmlpreview.github.io/?https://github.com/PixelRPG/gamecontroller.js/blob/master/examples/example-5-alvanoid.html): small Arkanoid-based game (based on a previous CodePen demo).
+- [Pong](https://htmlpreview.github.io/?https://github.com/PixelRPG/gamecontroller.js/blob/master/examples/example-6-multiplayer.html): multiplayer demo with the classic game Pong for 2 players on 2 gamepads.
+
+## Credits
+
+This is an enhanced fork of the original [gamecontroller.js](https://github.com/alvaromontoro/gamecontroller.js) by Alvaro Montoro. 
+
+### Changes in this fork:
+- Full TypeScript rewrite with type definitions
+- Added `GAMEPAD_BUTTONS` and `GAMEPAD_AXES` constants
+- Added `controllerId` property for automatic controller detection
+- Improved event handling
+- Enhanced browser compatibility
+- Better Node.js/SSR support

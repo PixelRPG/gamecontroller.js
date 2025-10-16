@@ -33,13 +33,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/alvaromontoro/gamecontrol.git"
+		"url": "git+https://github.com/PixelRPG/gamecontroller.js.git"
 	},
 	"bugs": {
-		"url": "https://github.com/alvaromontoro/gamecontrol/issues"
+		"url": "https://github.com/PixelRPG/gamecontroller.js/issues"
 	},
-	"homepage": "https://github.com/alvaromontoro/gamecontrol",
-	"author": "Alvaro Montoro",
+	"homepage": "https://github.com/PixelRPG/gamecontroller.js",
+	"author": "Alvaro Montoro (original), PixelRPG/ribajs (fork maintainer)",
 	"license": "MIT",
 	"keywords": [
 		"game control",
