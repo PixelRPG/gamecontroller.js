@@ -19,6 +19,7 @@ const gamepad = {
 	init: (gpad: Gamepad) => {
 		const gamepadPrototype: GamepadState = {
 			id: gpad.index,
+			controllerId: gpad.id,
 			buttons: gpad.buttons.length,
 			axes: Math.floor(gpad.axes.length / 2),
 			axeValues: [],

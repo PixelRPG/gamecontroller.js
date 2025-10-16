@@ -5,6 +5,8 @@ import type { GCType } from "./type";
 
 export interface GamepadState {
 	id: number;
+	/** The controller's identification string (e.g., "057e-2009-Pro Controller") */
+	controllerId: string;
 	buttons: number;
 	axes: number;
 	axeValues: number[][];
