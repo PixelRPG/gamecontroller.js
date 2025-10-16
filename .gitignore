@@ -3,3 +3,4 @@
 !.github/workflows
 node_modules
 coverage
+dist

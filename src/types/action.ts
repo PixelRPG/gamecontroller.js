@@ -1,5 +1,5 @@
 export interface GCAction {
-  action(): void;
-  after(): void;
-  before(): void;
+	action(): void;
+	after(): void;
+	before(): void;
 }

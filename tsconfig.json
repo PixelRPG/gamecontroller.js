@@ -1,9 +1,9 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "strict": true,
-    "moduleResolution": "Node"
-  },
-  "exclude": ["dist/types"]
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"strict": true,
+		"moduleResolution": "Node"
+	},
+	"exclude": ["dist/types"]
 }

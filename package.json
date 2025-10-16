@@ -1,58 +1,59 @@
 {
-  "name": "@ribajs/gamecontroller.js",
-  "version": "2.0.0-rc.23",
-  "description": "A JavaScript library that lets you handle, configure, and use gamepad and controllers on a browser, using the Gamepad API",
-  "main": "dist/cjs/index.js",
-  "browser": "dist/esm/browser.js",
-  "types": "dist/types/index.d.ts",
-  "module": "dist/esm/index.js",
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "yarn run build:browser:dev && yarn run build:browser && yarn run build:esm && yarn run build:cjs && yarn run build:types",
-    "build:browser": "webpack --output-filename gamecontroller.min.js --mode production",
-    "build:browser:dev": "webpack --output-filename gamecontroller.js --mode development",
-    "build:types": "tsc --declaration true --emitDeclarationOnly --outDir dist/types",
-    "build:esm": "tsc --declaration false --module esnext --outDir dist/esm",
-    "build:cjs": "tsc --project ./tsconfig.json --declaration false --module commonjs --outDir dist/cjs",
-    "test": "yarn run build:cjs && jest --coverage",
-    "serve": "http-server . -o /examples/ -d"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.27.4",
-    "@babel/plugin-transform-typescript": "^7.27.1",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-typescript": "^7.27.1",
-    "babel-loader": "^10.0.0",
-    "http-server": "^14.1.1",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^30.0.0",
-    "typescript": "5.8.3",
-    "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alvaromontoro/gamecontrol.git"
-  },
-  "bugs": {
-    "url": "https://github.com/alvaromontoro/gamecontrol/issues"
-  },
-  "homepage": "https://github.com/alvaromontoro/gamecontrol",
-  "author": "Alvaro Montoro",
-  "license": "MIT",
-  "keywords": [
-    "game control",
-    "gamepad",
-    "game controller",
-    "game control",
-    "controller",
-    "gaming",
-    "web api",
-    "html5 api",
-    "gamepad api"
-  ],
-  "directories": {
-    "example": "examples",
-    "test": "tests"
-  }
+	"name": "@ribajs/gamecontroller.js",
+	"version": "2.0.0-rc.23",
+	"description": "A JavaScript library that lets you handle, configure, and use gamepad and controllers on a browser, using the Gamepad API",
+	"main": "dist/cjs/index.js",
+	"browser": "dist/esm/browser.js",
+	"types": "dist/types/index.d.ts",
+	"module": "dist/esm/index.js",
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "yarn run build:browser:dev && yarn run build:browser && yarn run build:esm && yarn run build:cjs && yarn run build:types",
+		"build:browser": "webpack --output-filename gamecontroller.min.js --mode production",
+		"build:browser:dev": "webpack --output-filename gamecontroller.js --mode development",
+		"build:types": "tsc --declaration true --emitDeclarationOnly --outDir dist/types",
+		"build:esm": "tsc --declaration false --module esnext --outDir dist/esm",
+		"build:cjs": "tsc --project ./tsconfig.json --declaration false --module commonjs --outDir dist/cjs",
+		"test": "yarn run build:cjs && jest --coverage",
+		"serve": "http-server . -o /examples/ -d",
+		"check": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.27.4",
+		"@babel/plugin-transform-typescript": "^7.27.1",
+		"@babel/preset-env": "^7.27.2",
+		"@babel/preset-typescript": "^7.27.1",
+		"babel-loader": "^10.0.0",
+		"http-server": "^14.1.1",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^30.0.0",
+		"typescript": "5.8.3",
+		"webpack": "^5.99.9",
+		"webpack-cli": "^6.0.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alvaromontoro/gamecontrol.git"
+	},
+	"bugs": {
+		"url": "https://github.com/alvaromontoro/gamecontrol/issues"
+	},
+	"homepage": "https://github.com/alvaromontoro/gamecontrol",
+	"author": "Alvaro Montoro",
+	"license": "MIT",
+	"keywords": [
+		"game control",
+		"gamepad",
+		"game controller",
+		"game control",
+		"controller",
+		"gaming",
+		"web api",
+		"html5 api",
+		"gamepad api"
+	],
+	"directories": {
+		"example": "examples",
+		"test": "tests"
+	}
 }

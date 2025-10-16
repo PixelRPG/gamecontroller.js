@@ -1,1 +1,1 @@
-export type GCDisconnectCallback = (index: number) => any;
+export type GCDisconnectCallback = (index: number) => unknown;
